@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Coffee Shop management system</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/styles.css" /> 
+	</head>
+	<body>
+		<div class="login-form">
+			<h1>Add Items to Menu</h1>
+			<form action="additem" method="POST">
+				<select name="category">
+				  <option value="hot">Hot Beverages</option>
+				  <option value="cold">Cold Beverages</option>
+				  <option value="snacks">Snacks</option>
+				  <option value="desserts">Desserts</option>
+				</select>
+				<input type="text" name="name" placeholder="Item Name" required>
+				<input type="text" name="price" placeholder="Price" required>
+				<input type="submit" value="Add">
+			</form>
+		</div>
+		
+	</body>
+</html>
+

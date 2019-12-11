@@ -1,0 +1,41 @@
+<html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="css/styles.css" /> 
+	</head>
+	<body>
+	<div class="login-form">
+			<h1>Manage Orders</h1>
+			Order ID: <%=data[0].order_id%>
+</div>
+<table border="1" cellpadding="7" cellspacing="7" align="center">
+  <tr>
+	<th width="50px">No</th>
+    <th>Item Name</th>
+    <th>Rate</th>
+    <th>Quantity</th>
+    <th>Price</th>
+  </tr>
+  <% if(data.length){ 
+    for(var i = 0;i < data.length;i++) { %>
+  <tr>
+    <td><%=(i+1)%></td>
+    <td><%=data[i].item_name%></td>
+    <td><%=data[i].price%></td>
+    <td><%=data[i].quantity%></td>
+    <td><%=data[i].total%></td>
+  </tr>
+  <% }
+  }else{ %>
+  <tr>
+    <td colspan="3">No Items Added</td>	
+  </tr>
+<% } %>
+</table>
+<br>
+<div class="login-form">
+<form action="/close" method="POST">
+				<input type="submit" value="Close Order">
+			</form>
+
+</div>
+</body></html>

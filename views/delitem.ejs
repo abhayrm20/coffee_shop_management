@@ -1,0 +1,50 @@
+<html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="css/styles.css" /> 
+	</head>
+	<body>
+	<body>
+		<div class="login-form">
+			<h1>Delete Items from Menu</h1>
+			<form action="http://localhost:3001/delitem" method="POST">
+				Delete by: 
+				<select name="type">
+				  
+				  <option value="id">Item ID</option>
+				  <option value="name">Item Name</option>
+				</select>
+				<input type="text" name="val" placeholder="Value" required>
+				<input type="submit" value="Delete">
+			</form>
+
+		</div>
+<table border="1" cellpadding="7" cellspacing="7" align="center">
+  <tr>
+    <th width="50px">No</th>
+    <th>ID</th>
+    <th>Category</th>
+    <th>Item</th>
+    <th>Price</th>
+  </tr>
+  <% if(data.length){ 
+    for(var i = 0;i < data.length;i++) { %>
+  <tr>
+    <td><%=(i+1)%></td>
+    <td><%=data[i].item_id%></td>
+    <td><%=data[i].category%></td>
+    <td><%=data[i].item_name%></td>
+    <td><%=data[i].price%></td>
+  </tr>
+  <% }
+  }else{ %>
+  <tr>
+    <td colspan="3">No item</td>
+  </tr>
+<% } %>
+</table>
+<div class="login-form">
+			<form action="http://localhost:3001/jsonify" method="GET">
+				<input type="submit" value="Update Menu">
+			</form>
+			</div>
+</body></html>

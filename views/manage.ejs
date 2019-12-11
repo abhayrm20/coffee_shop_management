@@ -1,0 +1,49 @@
+<html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="css/styles.css" /> 
+	</head>
+	<body>
+	<div class="login-form">
+			<h1>Manage Orders</h1>
+</div>
+<table border="1" cellpadding="7" cellspacing="7" align="center">
+  <tr>
+    <th>ID</th>
+    <th>Customer</th>
+    <th>Amount</th>
+    <th>Table No</th>
+    <th>Status</th>
+    <th>Order Time</th>
+  </tr>
+  <% if(data.length){ 
+    for(var i = 0;i < data.length;i++) { %>
+  <tr>
+    <td><%=data[i].order_id%></td>
+    <td><%=data[i].name%></td>
+    <td><%=data[i].tot_amount%></td>
+    <td><%=data[i].table_no%></td>
+    <td><%=data[i].status%></td>
+    <td><%=data[i].datetime%></td>
+  </tr>
+  <% }
+  }else{ %>
+  <tr>
+    <td colspan="3">No user</td>
+  </tr>
+<% } %>
+</table>
+<br>
+<div class="login-form">
+	<h1>Enter Order ID to manage</h1>
+<form action="/manage" method="POST">
+				<input type="text" name="name" placeholder="Order ID" required>
+				<input type="submit" value="Submit">
+			</form>
+	<h1>Enter Table No to get total bill amount</h1>
+<form action="/getbill" method="POST">
+				<input type="text" name="name" placeholder="Table No" required>
+				<input type="submit" value="Submit">
+			</form>
+
+</div>
+</body></html>

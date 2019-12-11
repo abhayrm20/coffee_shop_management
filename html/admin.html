@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Coffee Shop management system</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/styles.css" /> 
+	</head>
+	<body>
+		<div class="login-form">
+			<h1>Manage Menu Items</h1>
+			<form action="additems" method="GET">
+				<a href='/additems'><input type="submit" value="Add Items"></a>
+			</form>
+			<br>
+			<form action="delitems" method="GET">
+				<a href='/delitems'><input type="submit" value="Delete Items"></a>
+			</form>
+			<br>
+			<form action="manageorders" method="GET">
+				<a href='/manageorders'><input type="submit" value="Manage Orders"></a>
+			</form>
+		</div>
+	</body>
+</html>

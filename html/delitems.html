@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Coffee Shop management system</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/styles.css" /> 
+	</head>
+	<body>
+		<div class="login-form">
+			<h1>Delete Items from Menu</h1>
+			<form action="delitem" method="POST">
+				Delete by: 
+				<select name="type">
+				  <option value="name">Item Name</option>
+				  <option value="id">Item ID</option>
+				</select>
+				<input type="text" name="val" placeholder="Value" required>
+				<input type="submit" value="Delete">
+			</form>
+		</div>
+	</body>
+</html>
+

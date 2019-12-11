@@ -1,0 +1,50 @@
+<html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="css/styles.css" /> 
+	</head>
+	<body>
+	<div class="login-form">
+			<h1>Add Items to Menu</h1>
+			<form action="http://localhost:3001/additem" method="POST">
+				<select name="category">
+				  <option value="Hot Beverage">Hot Beverages</option>
+				  <option value="Cold Beverage">Cold Beverages</option>
+				  <option value="Snack">Snacks</option>
+				  <option value="Dessert">Desserts</option>
+				</select>
+				<input type="text" name="name" placeholder="Item Name" required>
+				<input type="text" name="price" placeholder="Price" required>
+				<input type="submit" value="Add">
+			</form>
+
+</div>
+<table border="1" cellpadding="7" cellspacing="7" align="center">
+  <tr>
+    <th width="50px">No</th>
+    <th>ID</th>
+    <th>Category</th>
+    <th>Item</th>
+    <th>Price</th>
+  </tr>
+  <% if(data.length){ 
+    for(var i = 0;i < data.length;i++) { %>
+  <tr>
+    <td><%=(i+1)%></td>
+    <td><%=data[i].item_id%></td>
+    <td><%=data[i].category%></td>
+    <td><%=data[i].item_name%></td>
+    <td><%=data[i].price%></td>
+  </tr>
+  <% }
+  }else{ %>
+  <tr>
+    <td colspan="3">No user</td>
+  </tr>
+<% } %>
+</table>
+<div class="login-form">
+			<form action="http://localhost:3001/jsonify" method="GET">
+				<input type="submit" value="Update Menu">
+			</form>
+			</div>
+</body></html>
